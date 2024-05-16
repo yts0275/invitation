@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  /* font-family: 'Roboto', sans-serif;  */
+  /* font-family: 'Montserrat', sans-serif;  */
+  /* font-family: 'Lato', sans-serif;  */
+  /* font-family: 'Playfair Display', serif; */
+  font-family: 'Dancing Script', cursive;
+}

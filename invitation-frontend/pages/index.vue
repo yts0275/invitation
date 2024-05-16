@@ -1,10 +1,16 @@
 <template>
-  <div>
-    <p class="text-3xl font-bold underline">
-      Hello world!
-    </p>
-    <AppAlert>
-      <!-- This is an auto-imported component -->
-    </AppAlert>
+  <div class="container">
+    <Header />
+    <Pictures />
+    <Directions />
+    <GetMoney />
+    <GuestBook />
+    <Footer />
   </div>
 </template>
+
+<style scoped>
+.container {
+  text-align: center;
+}
+</style>
