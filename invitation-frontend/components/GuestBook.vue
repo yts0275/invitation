@@ -3,18 +3,18 @@
     <h1 class="text-3xl font-bold mb-8">방명록</h1>
     <div v-if="isLoading" class="text-center">로딩 중...</div>
     <!-- <div v-else class="grid grid-cols-1 sm:grid-cols-3 gap-4"> -->
-    <div>
+    <div v-else>
       <Swiper
-        :modules="[SwiperThumbs]"
-        :thumbs="{ swiper: thumbsSwiper }"
-        @swiper="setThumbsSwiper" 
-        watch-slides-progress
-        
+        :slides-per-view="3"
+        :loop="true"
       >
-        <SwiperSlide v-for="book in guestBooks" :key="book.id">
-          <GuestBookDetail :book="book" />
-        </SwiperSlide>
-      </Swiper>
+      <SwiperSlide v-for="book in guestBooks" :key="book.id">
+        <GuestBookDetail :book="book"/>
+        <!-- <p class="text-red-500">{{ book.id }}</p>
+        <p class="text-red-500">{{ book.name }}</p>
+        <p class="text-red-500">{{ book.content }}</p> -->
+      </SwiperSlide>
+    </Swiper>
     </div>
   </div>
 </template>
@@ -31,12 +31,9 @@ type GuestBook = {
   updated_at: Date;
 };
 
-const guestBooks = useState<GuestBook[]>("guestBooks", () => []);
+// const guestBooks = useState<GuestBook[]>("guestBooks", () => []);
+const guestBooks = ref<GuestBook[]>()
 const isLoading = useState<Boolean>("isLoading", () => true);
-const thumbsSwiper = ref(null);
-const setThumbsSwiper = (swiper) => {
-  thumbsSwiper.value = swiper;
-};
 
 onMounted(() => {
   const API_URL = import.meta.env.VITE_API_URL;
@@ -49,15 +46,14 @@ onMounted(() => {
       },
     })
     .then((res) => {
-      console.log("res = ", res);
       guestBooks.value = res.data;
-      isLoading.value = false;
-    })
+    }).then(() => { isLoading.value = false; })
     .catch((err) => {
       console.log("err = ", err);
       isLoading.value = false;
     });
 });
+
 </script>
 
 <style scoped></style>

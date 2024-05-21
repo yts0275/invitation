@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center">
+  <div class="container text-center">
     <Header />
     <Pictures />
     <Directions />
@@ -10,9 +10,8 @@
 </template>
 
 <style scoped>
-@media (max-width: 768px) {
-  .container {
-    max-width: 100%;
-  }
+.container {
+  max-width: 60%;
+  margin: 0 auto;
 }
 </style>

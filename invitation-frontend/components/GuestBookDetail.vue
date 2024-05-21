@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white shadow-md rounded-lg p-4 mb-4">
+  <div class="bg-white shadow-md rounded-lg p-4 mb-4 mx-4 hover:bg-slate-200 border">
     <h2 class="text-xl font-bold mb-2">{{ book.name }}</h2>
     <p class="text-gray-700 mb-4">{{ truncateContent(book.content, 10) }}</p>
     <p class="text-sm text-gray-500">
@@ -30,8 +30,7 @@ function truncateContent(content: string, maxLength: number): string {
 
 
 function formatDate(date: Date): string {
-  const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-  return new Date(date).toLocaleDateString(undefined, options);
+  return new Date(date).toLocaleDateString(undefined, { year: 'numeric', month: '2-digit', day: '2-digit' });
 }
 </script>
 
