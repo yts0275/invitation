@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-h1">찾아오시는 길</h1>
+    <h2 class="title">찾아오시는 길</h2>
   </div>
 </template>
 

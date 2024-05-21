@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="text-h2">우리 결혼합니다.</h2>
+    <h2 class="title">우리 결혼합니다.</h2>
   </div>
 </template>
 

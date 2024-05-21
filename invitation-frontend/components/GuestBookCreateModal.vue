@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="title">마음 전하실 곳</h2>
+    <h1>Modal 테스트</h1>
   </div>
 </template>
 

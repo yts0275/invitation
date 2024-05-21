@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/google-fonts', 'nuxt-swiper'],
+  modules: ['@nuxtjs/google-fonts'],
   googleFonts: {
     families: {
       Roboto: true, // Roboto 폰트 추가

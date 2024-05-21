@@ -1,15 +1,17 @@
 <template>
-  <div class="bg-white shadow-md rounded-lg p-4 mb-4 mx-4 hover:bg-slate-200 border">
-    <h2 class="text-xl font-bold mb-2">{{ book.name }}</h2>
-    <p class="text-gray-700 mb-4">{{ truncateContent(book.content, 10) }}</p>
-    <p class="text-sm text-gray-500">
-      Created:  {{ formatDate(book.created_at) }} <br />
-      Updated:  {{ formatDate(book.updated_at) }}
+  <div class="text-[.5rem] flex flex-col rounded-xl w-44 max-w-xl bg-stone-100 hover:bg-stone-200 flex-none text-xs p-4 justify-between">
+    <h2 class="">{{ book.name }}</h2>
+    <!-- <p class="">{{ truncateContent(book.content, 10) }}</p> -->
+    <p class="">{{ book.content }}</p>
+    <p class="">
+      {{ formatDate(book.updated_at) }}
     </p>
   </div>
 </template>
 
 <script setup lang="ts">
+import dayjs from 'dayjs';
+
 type GuestBook = {
   id: number,
   name: string,
@@ -30,8 +32,10 @@ function truncateContent(content: string, maxLength: number): string {
 
 
 function formatDate(date: Date): string {
-  return new Date(date).toLocaleDateString(undefined, { year: 'numeric', month: '2-digit', day: '2-digit' });
+  return dayjs(date).format('MM월 DD일 HH:mm')
 }
+
+
 </script>
 
 <style lang="scss" scoped>

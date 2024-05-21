@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex flex-col bg-stone-300 py-4">
+  <div class="w-full flex flex-col bg-stone-300 py-4 text-center">
     <p >Made By 신랑. 금기륜</p>
   </div>
 </template>
