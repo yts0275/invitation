@@ -22,15 +22,6 @@ type GuestBook = {
 
 defineProps<{ book: GuestBook }>()
 
-function truncateContent(content: string, maxLength: number): string {
-  if (content.length > maxLength) {
-    return content.slice(0, maxLength) + '...';
-  } else {
-    return content;
-  }
-}
-
-
 function formatDate(date: Date): string {
   return dayjs(date).format('MM월 DD일 HH:mm')
 }

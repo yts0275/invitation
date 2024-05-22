@@ -8,13 +8,20 @@
     </div>
     <div v-if="isLoading" class="text-center">로딩 중...</div>
     <!-- <div v-else class="grid grid-cols-1 sm:grid-cols-3 gap-4"> -->
-    <div v-else class="guestbooks-container overflow-x-auto flex w-full space-x-3 h-64 py-4 relative">
-      <GuestBookDetail
-        v-for="book in guestBooks"
-        :key="book.id"
-        :book="book"
-      />
+    <div v-else>
+      <div v-if="isEmpty" class="mt-10 text-center text-gray-500 text-xl">
+        아직 방명록이 없습니다. 첫 번째 메시지를 남겨주세요 !!
+      </div>
+      <div v-else class="guestbooks-container overflow-x-auto flex w-full space-x-3 h-64 py-4 relative">
+        <GuestBookDetail
+          v-for="book in guestBooks"
+          :key="book.id"
+          :book="book"
+        />
+      </div>
     </div>
+
+    <GuestBookCreateModal v-if="isModalOpen" @close="toggleModal" :lastPk="lastPk" @getData="getData"/>
   </div>
 </template>
 
@@ -31,12 +38,25 @@ type GuestBook = {
 };
 
 // const guestBooks = useState<GuestBook[]>("guestBooks", () => []);
-const guestBooks = ref<GuestBook[]>()
+const guestBooks = ref<GuestBook[]>([])
 const isLoading = useState<Boolean>("isLoading", () => true);
+const isModalOpen = ref<boolean>(false);
+const lastPk = ref<number | null>(null);
+
+const isEmpty = computed(() => {
+  return guestBooks.value.length === 0
+})
+
+const toggleModal = () => {
+  isModalOpen.value = !isModalOpen.value;
+}
 
 onMounted(() => {
-  const API_URL = import.meta.env.VITE_API_URL;
+  getData()
+});
 
+const getData = () => {
+  const API_URL = import.meta.env.VITE_API_URL;
   axios
     .get(API_URL, {
       headers: {
@@ -45,13 +65,20 @@ onMounted(() => {
       },
     })
     .then((res) => {
-      guestBooks.value = res.data;
+      if(res.data.length === 0) {
+        lastPk.value = 1
+      } else {
+        lastPk.value = res.data[res.data.length - 1].id;
+        guestBooks.value = res.data.reverse()
+      }
     }).then(() => { isLoading.value = false; })
     .catch((err) => {
       console.log("err = ", err);
       isLoading.value = false;
     });
-});
+}
+
+
 
 </script>
 
