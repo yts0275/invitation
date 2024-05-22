@@ -12,7 +12,14 @@ export default defineNuxtConfig({
   },
   app: {
     baseURL: '/invitation/',
-    buildAssetsDir: 'assets'
+    buildAssetsDir: 'assets',
+    head: {
+      script: [
+        {
+          src: `//dapi.kakao.com/v2/maps/sdk.js?appkey=${import.meta.env.VITE_KAKAO_KPI_KEY}`
+        }
+      ]    
+    },
   },
   postcss: {
     plugins: {
