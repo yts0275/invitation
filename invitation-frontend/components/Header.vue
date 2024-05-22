@@ -9,9 +9,9 @@
       <div class="relative">
         <img src="/image/main-image.jpg" alt="">
       </div>
-      <div class="mx-4 mb-10 mt-12">
-        <p class="text-center text-xl">결혼식 시간</p>
-        <p class="text-center text-xl">결혼식 장소</p>
+      <div class="mb-10 mt-10">
+        <p class="text-center text-xl">2024.12.14 토요일</p>
+        <p class="mt-2 text-center text-xl">경주 블루원</p>
       </div>
     </div>
   </div>
