@@ -1,7 +1,14 @@
 <template>
   <div class="mt-10 pb-10">
     <h2 class="mb-5 title">찾아오시는 길</h2>
-    <p>경상북도 경주시 보불로 391</p>
+    <div class="flex justify-center gap-4">
+      <p>경상북도 경주시 블루원 웨딩 컨벤션</p>
+      <!-- 복사 아이콘 -->
+      <img src="/image/copy-icon.png" alt="" class="w-6 h-6 cursor-pointer" @click="copyToClipboard">
+      <a href="https://wd.blueone.com/content/01about/02_01.jsp" class="underline">
+        상세보기
+      </a>
+    </div>
     <div class="my-3 max-w-xl mx-auto w-full">
       <div ref="mapContainer" class="w-full h-80 mx-auto"></div>
     </div>
@@ -46,6 +53,7 @@
         </span>
       </div>
     </div>
+  
   </div>
 </template>
 
@@ -75,6 +83,13 @@ onMounted(() => {
     marker.setMap(map);
   }
 });
+
+const copyToClipboard = () => {
+  const text = '경상북도 경주시 블루원 웨딩 컨벤션';
+  navigator.clipboard.writeText(text).then(() => {
+    alert('주소가 클립보드에 복사되었습니다.');
+  });
+};
 
 </script>
 

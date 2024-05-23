@@ -11,7 +11,7 @@
       </div>
       <div class="mb-10 mt-10">
         <p class="text-center text-xl">2024.12.14 토요일</p>
-        <p class="mt-2 text-center text-xl">블루원 웨딩홀 컨벤션</p>
+        <a class="mt-2 text-center text-xl">블루원 웨딩홀 컨벤션</a>
       </div>
     </div>
   </div>
