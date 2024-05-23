@@ -1,8 +1,8 @@
 <template>
-  <div class="mt-10 pb-10">
-    <h2 class="mb-5 title">찾아오시는 길</h2>
+  <div id="directions-section" class="mt-10 pb-10 bg-[#e9ecef]">
+    <h2 class="py-5 mb-5 title">찾아오시는 길</h2>
     <div class="flex justify-center gap-4">
-      <p>경상북도 경주시 블루원 웨딩 컨벤션</p>
+      <p>경주시 블루원 웨딩 컨벤션</p>
       <!-- 복사 아이콘 -->
       <img src="/image/copy-icon.png" alt="" class="w-6 h-6 cursor-pointer" @click="copyToClipboard">
       <a href="https://wd.blueone.com/content/01about/02_01.jsp" class="underline">

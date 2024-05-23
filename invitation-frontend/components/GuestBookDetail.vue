@@ -1,5 +1,5 @@
 <template>
-  <div class="text-[.5rem] flex flex-col rounded-xl w-44 max-w-xl bg-stone-100 hover:bg-stone-200 flex-none text-xs p-4 justify-between">
+  <div class="shadow-md text-[.5rem] flex flex-col rounded-xl w-44 max-w-xl bg-stone-100 hover:bg-stone-200 flex-none text-xs p-4 justify-between">
     <h2 class="">{{ book.name }}</h2>
     <!-- <p class="">{{ truncateContent(book.content, 10) }}</p> -->
     <p class="">{{ book.content }}</p>

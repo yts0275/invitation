@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="mx-auto text-center">
+      <Main />
       <Header />
       <Pictures />
       <Directions />

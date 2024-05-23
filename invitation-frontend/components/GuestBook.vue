@@ -1,5 +1,5 @@
 <template>
-  <div class="guestbook-container mx-auto p-4">
+  <div class="guestbook-container mx-auto p-4 sm:w-[60%]">
     <div class="flex justify-between items-center mb-3">
       <!-- 작성하기 버튼과 동일한 공간을 차지하면서 사용자에게는 보이지 않도록 opacity-0 설정 -->
       <button class="opacity-0 text-sm bg-gray-200 hover:bg-gray-300 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">글 남기기</button>

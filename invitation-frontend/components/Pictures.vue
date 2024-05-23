@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-10 pb-10 bg-[#e9ecef]">
+  <div class="pb-10">
     <div class="mx-auto max-w-3xl">
       <h2 class="py-5 title">사진첩</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mx-10">

@@ -14,11 +14,15 @@ export default defineNuxtConfig({
     baseURL: '/invitation/',
     buildAssetsDir: 'assets',
     head: {
+      title: '기륜 & 희은 결혼해요',
       script: [
         {
           src: `//dapi.kakao.com/v2/maps/sdk.js?appkey=${import.meta.env.VITE_KAKAO_KPI_KEY}`
         }
-      ]    
+      ],
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/invitation/logo.png', sizes: 'any' },
+      ]
     },
   },
   postcss: {
